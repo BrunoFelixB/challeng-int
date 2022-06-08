@@ -42,7 +42,6 @@ const getReq = async (req, res) => {
             for (var i = 0; i < apiArg.data.length; i++) {
 
                 const newUni = new uniSchema({
-                    _id: new mongoose.Types.ObjectId(),
                     alpha_two_code: apiArg.data[i].alpha_two_code,
                     domains: [
                         apiArg.data[i].domains
@@ -63,7 +62,6 @@ const getReq = async (req, res) => {
             for (var i = 0; i < apiBra.data.length; i++) {
 
                 const newUni = new uniSchema({
-                    _id: new mongoose.Types.ObjectId(),
                     alpha_two_code: apiBra.data[i].alpha_two_code,
                     domains: [
                         apiBra.data[i].domains
@@ -84,7 +82,6 @@ const getReq = async (req, res) => {
             for (var i = 0; i < apiChi.data.length; i++) {
 
                 const newUni = new uniSchema({
-                    _id: new mongoose.Types.ObjectId(),
                     alpha_two_code: apiChi.data[i].alpha_two_code,
                     domains: [
                         apiChi.data[i].domains
@@ -105,7 +102,6 @@ const getReq = async (req, res) => {
             for (var i = 0; i < apiCol.data.length; i++) {
 
                 const newUni = new uniSchema({
-                    _id: new mongoose.Types.ObjectId(),
                     alpha_two_code: apiCol.data[i].alpha_two_code,
                     domains: [
                         apiCol.data[i].domains
@@ -126,7 +122,6 @@ const getReq = async (req, res) => {
             for (var i = 0; i < apiPar.data.length; i++) {
 
                 const newUni = new uniSchema({
-                    _id: new mongoose.Types.ObjectId(),
                     alpha_two_code: apiPar.data[i].alpha_two_code,
                     domains: [
                         apiPar.data[i].domains
@@ -147,7 +142,6 @@ const getReq = async (req, res) => {
             for (var i = 0; i < apiUru.data.length; i++) {
 
                 const newUni = new uniSchema({
-                    _id: new mongoose.Types.ObjectId(),
                     alpha_two_code: apiUru.data[i].alpha_two_code,
                     domains: [
                         apiUru.data[i].domains
@@ -168,7 +162,6 @@ const getReq = async (req, res) => {
             for (var i = 0; i < apiPer.data.length; i++) {
 
                 const newUni = new uniSchema({
-                    _id: new mongoose.Types.ObjectId(),
                     alpha_two_code: apiPer.data[i].alpha_two_code,
                     domains: [
                         apiPer.data[i].domains
@@ -189,7 +182,6 @@ const getReq = async (req, res) => {
             for (var i = 0; i < apiSur.data.length; i++) {
 
                 const newUni = new uniSchema({
-                    _id: new mongoose.Types.ObjectId(),
                     alpha_two_code: apiSur.data[i].alpha_two_code,
                     domains: [
                         apiSur.data[i].domains
