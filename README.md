@@ -1,4 +1,20 @@
+# Projeto de API 
+
+Realiza busca em uma API externa, salva no banco de dados mongoDB e realiza o CRUD. 
+
 ## PARTE 1 
+
+### Inciando 
+
+Instalar a dependências necessárias:
+
+axios, cors, dontenv-safe, express, mongoose, node-fetch, nodemon, schame
+
+```
+npm install 
+
+```
+
 
 ### Primeiro - rodar o comando para iniciar o servidor:
 
@@ -10,6 +26,7 @@ O comando irá ligar o servidor e o mesmo funcionará através da porta 3000.
 
 ### Segundo - para fazer o script realizar a varredura na API, basta solicitar a rota abaixo:
 
+### Método GET
 
 ```
 http://localhost:3000/universities/req
@@ -23,6 +40,8 @@ Isso irá armazenar todas as universidades do paises em uma collection no mongoD
 
 ### GET/universities:
 
+### Método GET
+
 ```
 http://localhost:3000/universities/all/
 
@@ -31,6 +50,8 @@ está rota irá retornar todas as universidades armazenadas no banco de dados.
 
 
 ### Método para buscar a universidade por id:
+
+### Método GET
 
 o id deve ser passado por parâmetro
 
@@ -42,6 +63,8 @@ essa rota irá retorna a universidade referente ao ID.
 
 
 ### Método para cadastro de Universidades:
+
+### Método POST
 
 ```
 http://localhost:3000/universities/create
@@ -65,6 +88,8 @@ Essa rota irá criar uma nova universidade e salvar no banco de dados local, cas
 
 ### Método para atualizar uma Universidade:
 
+### Método PATCH
+
 o id deve ser passado por parâmetro
 
 ```
@@ -84,6 +109,8 @@ devem ser passados pelo body os seguintes comandos:
 Essa rota irá atualizar os dados da universidade referente ao ID em questão e salvar no banco de dados local. 
 
 ### Método para deletar uma Universidade:
+
+### Método DELETE
 
 o id deve ser passado por parâmetro
 
