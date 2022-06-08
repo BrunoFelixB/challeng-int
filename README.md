@@ -1,10 +1,10 @@
 # Projeto de API 
 
-Realiza busca em uma API externa, salva no banco de dados mongoDB e realiza o CRUD. 
+Realiza uma busca em uma API externa, salva no banco de dados mongoDB e realiza o CRUD. 
 
 ## PARTE 1 
 
-### Inciando 
+### Iniciando 
 
 Instalar a dependências necessárias:
 
