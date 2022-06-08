@@ -6,17 +6,16 @@
 npm run server
 
 ```
-O comando irá ligar o servidor e o mesmo funcionará através da porta 8080.
+O comando irá ligar o servidor e o mesmo funcionará através da porta 3000.
 
 ### Segundo - para fazer o script realizar a varredura na API, basta solicitar a rota abaixo:
 
-o país deve ser passado por parametro
 
 ```
-http://localhost:3000/universities/req/brazil
+http://localhost:3000/universities/req
 
 ```
-Isso irá armazenar todas as universidades do país informado em uma collection no mongoDB.
+Isso irá armazenar todas as universidades do paises em uma collection no mongoDB.
 
 
 ## PARTE 2
@@ -25,15 +24,15 @@ Isso irá armazenar todas as universidades do país informado em uma collection 
 ### GET/universities:
 
 ```
-http://localhost:3000/universities/all
+http://localhost:3000/universities/all/
 
 ```
-a rota irá listar todas as universidades armazenadas no banco de dados, Retornar os campos id, nome, país e estado.
+está rota irá retornar todas as universidades armazenadas no banco de dados.
 
 
 ### Método para buscar a universidade por id:
 
-o id deve ser passado por parametro
+o id deve ser passado por parâmetro
 
 ```
 http://localhost:3000/universities/id
@@ -62,11 +61,11 @@ devem ser passados pelo body os seguintes comandos:
 
 ```
 
-Essa rota irá criar uma nova universidade e salvar no banco de dados local. 
+Essa rota irá criar uma nova universidade e salvar no banco de dados local, caso já exista retorná um erro. 
 
 ### Método para atualizar uma Universidade:
 
-o id deve ser passado por parametro
+o id deve ser passado por parâmetro
 
 ```
 http://localhost:3000/universities/update/id
@@ -86,10 +85,10 @@ Essa rota irá atualizar os dados da universidade referente ao ID em questão e 
 
 ### Método para deletar uma Universidade:
 
-o id deve ser passado por parametro
+o id deve ser passado por parâmetro
 
 ```
-http://localhost:8080/universities/delete/id
+http://localhost:3000/universities/delete/id
 
 ```
 

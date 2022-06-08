@@ -5,6 +5,7 @@ const mongoose = require('mongoose')
 
 
 // criei o primeiro método que armazenada a função que envia a resposta para a rota
+
 const home = (request, response) => {
     response.status(200).send({
         "messsage": "OK"
@@ -13,39 +14,204 @@ const home = (request, response) => {
 
 // criei um método que varre a api e armazenar no Mongo
 
-const getReqbyCountry = async (req, res) => {
+const getReq = async (req, res) => {
+
     try {
-        const country = await (req.params.country)
 
-        const apiResponse = await axios.get("http://universities.hipolabs.com/search?country=" + country)
+        const universities = await uniSchema.find()
 
-        //últilizando o FOR para acessar todos os indices da API
-
-        for (var i = 0; i < apiResponse.data.length; i++) {
-
-            const newUni = new uniSchema({
-                _id: new mongoose.Types.ObjectId(),
-                alpha_two_code: apiResponse.data[i].alpha_two_code,
-                domains: [
-                    apiResponse.data[i].domains
-                ],
-                country: apiResponse.data[i].country,
-                web_pages: [
-                    apiResponse.data[i].web_pages
-                ],
-                name: apiResponse.data[i].name
+        if (universities.length > 1) {
+            res.status(400).json({
+                message: `já existem itens no banco de dados`,
             })
+        } else {
 
-        //salvando no mongo
+            // "argentina", "brasil", "chile", "colombia", "paraguai", "peru", "suriname", "uruguay"
 
-            const savedUni = await newUni.save()
+            const apiArg = await axios.get("http://universities.hipolabs.com/search?country=argentina")
+            const apiBra = await axios.get("http://universities.hipolabs.com/search?country=brazil")
+            const apiChi = await axios.get("http://universities.hipolabs.com/search?country=chile")
+            const apiCol = await axios.get("http://universities.hipolabs.com/search?country=colombia")
+            const apiPar = await axios.get("http://universities.hipolabs.com/search?country=paraguay")
+            const apiUru = await axios.get("http://universities.hipolabs.com/search?country=uruguay")
+            const apiPer = await axios.get("http://universities.hipolabs.com/search?country=peru")
+            const apiSur = await axios.get("http://universities.hipolabs.com/search?country=suriname")
+
+            //ultilizando o FOR para acessar todos os indices da API
+
+            for (var i = 0; i < apiArg.data.length; i++) {
+
+                const newUni = new uniSchema({
+                    _id: new mongoose.Types.ObjectId(),
+                    alpha_two_code: apiArg.data[i].alpha_two_code,
+                    domains: [
+                        apiArg.data[i].domains
+                    ],
+                    country: apiArg.data[i].country,
+                    web_pages: [
+                        apiArg.data[i].web_pages
+                    ],
+                    name: apiArg.data[i].name
+                })
+
+                //salvando no mongo
+
+                const savedUni = await newUni.save()
+
+            }
+
+            for (var i = 0; i < apiBra.data.length; i++) {
+
+                const newUni = new uniSchema({
+                    _id: new mongoose.Types.ObjectId(),
+                    alpha_two_code: apiBra.data[i].alpha_two_code,
+                    domains: [
+                        apiBra.data[i].domains
+                    ],
+                    country: apiBra.data[i].country,
+                    web_pages: [
+                        apiBra.data[i].web_pages
+                    ],
+                    name: apiBra.data[i].name
+                })
+
+                //salvando no mongo
+
+                const savedUni = await newUni.save()
+
+            }
+
+            for (var i = 0; i < apiChi.data.length; i++) {
+
+                const newUni = new uniSchema({
+                    _id: new mongoose.Types.ObjectId(),
+                    alpha_two_code: apiChi.data[i].alpha_two_code,
+                    domains: [
+                        apiChi.data[i].domains
+                    ],
+                    country: apiChi.data[i].country,
+                    web_pages: [
+                        apiChi.data[i].web_pages
+                    ],
+                    name: apiChi.data[i].name
+                })
+
+                //salvando no mongo
+
+                const savedUni = await newUni.save()
+
+            }
+
+            for (var i = 0; i < apiCol.data.length; i++) {
+
+                const newUni = new uniSchema({
+                    _id: new mongoose.Types.ObjectId(),
+                    alpha_two_code: apiCol.data[i].alpha_two_code,
+                    domains: [
+                        apiCol.data[i].domains
+                    ],
+                    country: apiCol.data[i].country,
+                    web_pages: [
+                        apiCol.data[i].web_pages
+                    ],
+                    name: apiCol.data[i].name
+                })
+
+                //salvando no mongo
+
+                const savedUni = await newUni.save()
+
+            }
+
+            for (var i = 0; i < apiPar.data.length; i++) {
+
+                const newUni = new uniSchema({
+                    _id: new mongoose.Types.ObjectId(),
+                    alpha_two_code: apiPar.data[i].alpha_two_code,
+                    domains: [
+                        apiPar.data[i].domains
+                    ],
+                    country: apiPar.data[i].country,
+                    web_pages: [
+                        apiPar.data[i].web_pages
+                    ],
+                    name: apiPar.data[i].name
+                })
+
+                //salvando no mongo
+
+                const savedUni = await newUni.save()
+
+            }
+
+            for (var i = 0; i < apiUru.data.length; i++) {
+
+                const newUni = new uniSchema({
+                    _id: new mongoose.Types.ObjectId(),
+                    alpha_two_code: apiUru.data[i].alpha_two_code,
+                    domains: [
+                        apiUru.data[i].domains
+                    ],
+                    country: apiUru.data[i].country,
+                    web_pages: [
+                        apiUru.data[i].web_pages
+                    ],
+                    name: apiUru.data[i].name
+                })
+
+                //salvando no mongo
+
+                const savedUni = await newUni.save()
+
+            }
+
+            for (var i = 0; i < apiPer.data.length; i++) {
+
+                const newUni = new uniSchema({
+                    _id: new mongoose.Types.ObjectId(),
+                    alpha_two_code: apiPer.data[i].alpha_two_code,
+                    domains: [
+                        apiPer.data[i].domains
+                    ],
+                    country: apiPer.data[i].country,
+                    web_pages: [
+                        apiPer.data[i].web_pages
+                    ],
+                    name: apiPer.data[i].name
+                })
+
+                //salvando no mongo
+
+                const savedUni = await newUni.save()
+
+            }
+
+            for (var i = 0; i < apiSur.data.length; i++) {
+
+                const newUni = new uniSchema({
+                    _id: new mongoose.Types.ObjectId(),
+                    alpha_two_code: apiSur.data[i].alpha_two_code,
+                    domains: [
+                        apiSur.data[i].domains
+                    ],
+                    country: apiSur.data[i].country,
+                    web_pages: [
+                        apiSur.data[i].web_pages
+                    ],
+                    name: apiSur.data[i].name
+                })
+
+                //salvando no mongo
+
+                const savedUni = await newUni.save()
+
+            }
+
+            res.status(200).json({
+                message: `Todas as Universidades foram adicionadas com sucesso!`,
+            })
         }
-
-        res.status(200).json({
-            message: `Um total de ${apiResponse.data.length} Universidades foram adicionadas com sucesso!`,
-        })
-
-
+        
     } catch (err) {
         console.log(err)
         response.status(500).send('Algo está errado')
@@ -81,17 +247,35 @@ const getbyID = async (req, res) => {
 
 // método para criar novas universidade e adicionar ao mongo
 
-
 const createUni = async (req, res) => {
+
     try {
-        const newUni = new uniSchema(req.body)
 
-        const savedUni = await newUni.save()
+        const uniFound = await (req.body.name)
 
-        res.status(200).json({
-            message: "universidade adicionado com sucesso!",
-            savedUni
+        const uni = await uniSchema.findOne({
+            name: uniFound
         })
+
+        if (uni) {
+
+            res.status(400).json({
+                message: `universidade ${uniFound} já existe!`,
+            })
+
+        } else {
+
+            const newUni = new uniSchema(req.body)
+
+            const savedUni = await newUni.save()
+
+            res.status(200).json({
+                message: "universidade adicionado com sucesso!",
+                savedUni
+            })
+
+        }
+
     } catch (error) {
         res.status(500).json({
             message: error.message
@@ -99,10 +283,12 @@ const createUni = async (req, res) => {
     }
 }
 
-// método para atualizar as existentes universidade e adicionar ao mongo
+// método para atualizar as universidades existentes 
 
 const updateUniById = async (req, res) => {
+
     try {
+
         const findUni = await uniSchema.findById(req.params.id)
 
         if (findUni) {
@@ -121,9 +307,10 @@ const updateUniById = async (req, res) => {
     } catch (error) {
         console.error(error)
     }
+
 }
 
-// método para deletas as universidade do mongo
+// método para deletas as universidade do banco de dados
 
 const deleteUniById = async (req, res) => {
     try {
@@ -145,7 +332,7 @@ const deleteUniById = async (req, res) => {
 
 module.exports = {
     home,
-    getReqbyCountry,
+    getReq,
     getAll,
     createUni,
     updateUniById,
