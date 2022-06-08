@@ -8,7 +8,7 @@ Realiza uma busca em uma API externa, salva no banco de dados mongoDB e realiza 
 
 Instalar a dependências necessárias:
 
-axios, cors, dontenv-safe, express, mongoose, node-fetch, nodemon, schame
+axios, cors, dontenv-safe, express, mongoose, node-fetch, nodemon, schema
 
 ```
 npm install 
