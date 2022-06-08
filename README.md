@@ -2,19 +2,18 @@
 
 Realiza uma busca em uma API externa, salva no banco de dados mongoDB e realiza o CRUD. 
 
+## Executar o projeto
+
+Projeto Clonar git clone `https://github.com/BrunoFelixB/challeng-int.git`
+
+Configure e ative seu ambiente virtual
+
+Requisitos de instalação `npm install`
+
+Dependências: `axios, cors, dontenv-safe, express, mongoose, node-fetch, nodemon, schema`
+
+
 ## PARTE 1 
-
-### Iniciando 
-
-Instalar a dependências necessárias:
-
-axios, cors, dontenv-safe, express, mongoose, node-fetch, nodemon, schema
-
-```
-npm install 
-
-```
-
 
 ### Primeiro - rodar o comando para iniciar o servidor:
 
